@@ -1,0 +1,96 @@
+<script type="text/javascript" src="sales.js"></script>
+<style type="text/css">
+
+*{
+    box-sizing: border-box;
+}
+
+.cus-form-div {
+    display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 5px;
+}
+    /* Formatting result items */
+.result{
+    position: absolute;
+}
+.customer-details-search{
+    height:50px;
+    font-size: 20px;
+}
+
+.result p{
+    margin: 0;
+    padding: 7px 10px;
+    border: 1px solid black;
+    border-top: none;
+    cursor: pointer;
+    background: #ffe4e1;
+}
+.result p:hover{
+    background: #FFD700;
+}
+</style>
+
+<body>
+<div class="cus-form-div">
+<div class="column">
+	<form class="customer-details-form">
+        <div class="search-box" style="margin-left: 50%;">
+           <input type="text" class="customer-details-search" id="name_search" placeholder="Search.." style="border-radius: 5px;border: 2px solid;">
+           <div class="result" style="margin-left: 5%;width:216.8px;"></div>
+        </div>	
+	</form>
+</div>
+
+<div class="column" style="border-left: 2px solid red;">
+    <form id="cus-form2" class="customer-details-form2" style="align-items: right;">
+        <input type="hidden" id="cus_id" disabled="disabled">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td><input type="text" class="customer-details" id="cus_name" disabled="disabled"></td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td>:</td>
+                <td><textarea type="text" style="width: 145px; height: 44px;" class="customer-details" id="cus_address" disabled="disabled"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Phone No</td>
+                <td>:</td>
+                <td><input type="text" class="customer-details" id="cus_phone" disabled="disabled"></td>
+            </tr>
+
+            <tr>
+                <td>Remarks</td>
+                <td>:</td>
+                <td><textarea type="text" style="width: 146px; height: 60px;" class="customer-details" id="cus_remarks" disabled="disabled"></textarea><br/></td>
+            </tr>
+
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            
+            <tr>
+                <td>
+                    <input type="button" id="next-button" style="display: none;" onclick="salesLoad()" value="Next"></input>
+                </td>
+            </tr>
+        </table>
+
+        
+</form>
+</div>
+</div>
+
+<div id="form3"></div>
+
+</body>
+</html>

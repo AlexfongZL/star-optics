@@ -1,0 +1,261 @@
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="../include/javascript/jquery-1.9.1.js"></script>
+<link href="../main.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../main.js"></script>
+<script src="inventory.js"></script>
+</head>
+
+<style type="text/css">
+
+* {
+box-sizing: border-box;
+}
+
+.data-div {
+display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+flex: 50%;
+padding: 5px;
+}
+
+td{
+ padding: 2.8px;
+}
+
+</style>
+
+<body>
+
+<div class="main-div">
+
+ <div class="menu-div" id="menu-div">
+  <input type="button" class="menu-button" value="Home" onclick="location.href='../home.html'">
+  <input type="button" class="menu-button" value="Sales" onclick="location.href='../sales/'">
+  <input type="button" class="menu-button" value="Customer" onclick="location.href='../customer/'">
+  <input type="button" class="menu-button selected-button" value="Inventory" onclick="location.href='../inventory/'">
+  <input type="button" class="menu-button" value="Supplier" onclick="location.href='../supplier/'">
+</div>
+
+<div class="clock">
+<iframe src="https://free.timeanddate.com/clock/i6kkoal7/n122/tlmy/fn2/ftb/bo3/tt0/td1/ts1" frameborder="0" width="258" height="20"></iframe>
+</div>
+
+  <div class="data-div">
+    <form action="action.php" method="POST">
+      <div class="column" style="border-right: 2px solid red;">
+        <h3>Enter the new item information below</h3>
+          
+            <fieldset>
+              <legend><h4>Basic Information</h4></legend>
+              <table>
+              <tr>
+                <td>
+                  Name: <input style="" type="text" name="item_name" id="item_name" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" required/>
+                </td>
+
+                <td>Brand:<input type="text" name="item_brand" id="item_brand" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" required/></td>
+
+                <td>Type: <select id="item_type" name="item_type">
+                    <option value="LENSE">Lense</option>
+                    <option value="SPECTACLE">Spectacle</option>
+                    <option value="SUNGLASS">Sunglass</option>
+                    <option value="CONTACT LENSE">Contact Lense</option>
+                    <option value="OTHER" selected="selected">Other</option>
+                  </select></td>
+              </tr>
+
+            </table>
+            </fieldset>
+
+              <fieldset>
+                <legend><h4>Quantity Information</h4></legend>
+
+                <table>
+                  <tr>
+                    <td>
+                      <input type="checkbox" name="checkbox[]" value="singled" id="check_single" checked="checked" />Singled Item
+                      <input type="checkbox" name="checkbox[]" value="boxed" id="check_boxed"/>Boxed Item
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div id="check_single_div">
+                        <table>
+                          <tr>
+                            <td>
+                              Quantity:
+                            </td>
+
+                            <td>
+                              <input type="text" name="item_quantity" id="item_quantity" class="positive-int" required/>
+                            </td>
+                          </tr>
+                        </table>
+                        
+                      </div>
+
+                      <div id="check_boxed_div">
+                        <table>
+                          <tr>
+                            <td>Number of Boxes:</td>
+
+                            <td>
+                              <input type="text" name="item_box_num" id="item_box_num" class="positive-int" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" required/>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              Number per Boxes:
+                            </td>
+                            <td>
+                              <input type="text" name="item_num_per_box" id="item_num_per_box" class="positive-int" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" required/>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              Total Quantity: 
+                            </td>
+
+                            <td>
+                              <input type="text" name="item_quantity_box" id="item_quantity_box" class="positive-int"/>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                       <div><br>
+                          Minimum Quantity:<input type="text" name="min_quantity" id="min_quantity" class="positive-int" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" required/>
+                      </div>
+                    </td>
+                  </tr>
+
+                </table>
+
+              </fieldset>
+
+              <fieldset>
+                <legend><h4>Price Information</h4></legend>
+                <table>
+                  
+
+                  <tr>
+                    <td>Cost Price/Item:</td>
+                    <td><input type="text" name="item_cost_price" id="item_cost_price" class="currency_input"/></td>
+                  </tr>
+
+                  <tr>
+                    <td>Sell Price/Item:</td>
+                    <td><input type="text" name="item_sell_price" id="item_sell_price" class="currency_input"/></td>
+                  </tr>
+                </table>
+              </fieldset>
+
+            
+</div><!-- End of left div -->
+
+<div class="column">
+      <fieldset>
+        <legend><h4>Other Details</h4></legend>
+
+        <table>
+          <tr>
+            <td>Item-ID</td>
+            <td>:</td>
+            <td><input type="text" name="item_id" id="item_id" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>Colour 1</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="item_colour_1" id="item_colour_1" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/>
+            </td>
+
+            <td>Colour 2</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="item_colour_2" id="item_colour_2" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/>
+            </td>
+
+            <td>Colour 3</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="item_colour_3" id="item_colour_3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/>
+            </td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              Order ID
+            </td>
+            <td>:</td>
+            <td>
+              <input type="text" name="item_order_id" id="item_order_id" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/>
+            </td>
+
+            <td>Degree</td>
+            <td>:</td>
+            <td><input type="text" name="item_degree" id="item_degree" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>Supplier ID</td>
+            <td>:</td>
+            <td><input type="text" name="item_supp_id" id="item_supp_id" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/></td>
+          </tr>
+
+          <tr>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>Remarks</td>
+            <td>:</td>
+            <td><input type="text" name="item_remarks" id="item_remarks"/></td>
+          </tr>
+
+        </table>
+      </fieldset>
+
+          
+</div><!-- end of right div -->
+<input type="button" class="back-btn" name="back" id="back" value="Back">
+          <input type="submit" class="submit-btn" name="add_item_submit" id="add_item_submit" value="Save">
+</form>
+  </div>
+  
+</div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+  footnoteLoad();
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="include/javascript/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</head>
+</script>
+
+<style type="text/css">
+  * {
+  box-sizing: border-box;
+}
+
+.main-div2 {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.data-div {
+  flex: 50%;
+  padding: 10px;
+}
+</style>
+
+<body>
+<span style="text-align: left"></span><span style="text-align: center"></span><span style="text-align: left"></span><span style="text-align: center"></span><span style="color: #0E008F"></span><span style="color: #85600A"></span><span style="color: #BA5300"></span>
+<div class="main-div">
+  <div class="menu-div" id="menu-div">
+    <input type="button" class="menu-button selected-button" value="Home" onclick="location.href='home.html'">
+    <input type="button" class="menu-button" value="Sales" onclick="location.href='sales/'">
+    <input type="button" class="menu-button" value="Customer" onclick="location.href='customer/'">
+    <input type="button" class="menu-button" value="Inventory" onclick="location.href='inventory/'">
+  <input type="button" class="menu-button" value="Supplier" onclick="location.href='supplier/'"></div>
+
+<div class="clock">
+  <iframe src="http://free.timeanddate.com/clock/i6kkoal7/n122/tlmy/fn2/ftb/bo3/tt0/td1/ts1" frameborder="0" width="258" height="20"></iframe>
+</div>
+  
+</div>
+
+<div class="main-div2">
+
+  <div class="data-div" id="data-div">
+    
+  </div>
+  <div class="data-div" id="data-div2"><img src="img/chart.png" style="width: 90%"> </div>
+</div>
+
+</body>
+
+<script>
+  initialLoad('notification.php');
+  //initialLoad2('notification3.php');
+  footnoteLoad();
+</script>
+</html>

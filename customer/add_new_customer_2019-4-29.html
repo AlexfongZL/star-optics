@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../main.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../main.js"></script>
+</head>
+
+<style type="text/css">
+  .back-button{
+    display: inline-block;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: red;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+}
+.back-button:hover {background-color: brown}
+
+.back-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.submit-btn{
+    display: inline-block;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+}
+.submit-btn:hover {background-color: #3e8e41}
+
+.submit-btn:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+<body>
+<span style="text-align: left"></span><span style="text-align: center"></span><span style="text-align: left"></span><span style="text-align: center"></span><span style="color: #0E008F"></span><span style="color: #85600A"></span><span style="color: #BA5300"></span>
+
+<div class="main-div">
+
+  <div class="menu-div" id="menu-div">
+    <input type="button" class="menu-button" value="Home" onclick="location.href='../home.html'">
+    <input type="button" class="menu-button" value="Sales" onclick="location.href='../sales/'">
+    <input type="button" class="menu-button selected-button" value="Customer" onclick="location.href='../customer/'">
+    <input type="button" class="menu-button" value="Inventory" onclick="location.href='../inventory/'">
+  <input type="button" class="menu-button" value="Supplier" onclick="location.href='../supplier/'"></div>
+
+<div class="clock">
+  <iframe src="http://free.timeanddate.com/clock/i6kkoal7/n122/tlmy/fn2/ftb/bo3/tt0/td1/ts1" frameborder="0" width="258" height="20"></iframe>
+</div>
+
+<div class="data-div">
+    <form action="action.php" method="POST">
+
+    <table border="0" cellspacing="0" cellpadding="1" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;padding-top:10px;padding-left:15px;padding-bottom:15px;">
+   <h2>Add new customer: Enter the information below</h2>
+  
+  <tr height="30">
+    <td>Full Name:</td>
+    <td><input class="input" type="text" name="full_name" id="full_name" size="51" autocomplete="off" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" autocomplete="off" required/>
+  </td>
+  </tr>
+
+  <tr height="30">
+    <td>Address:</td>
+    <td><textarea class="input" name="address" id="address" rows="3" cols="40" style="resize:none;" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" autocomplete="off"></textarea></td>
+  </tr>
+  
+  <tr height="30">
+    <td>Contact No.: </td>
+    <td>
+  <input class="input" type="text" name="phone_no" id="phone_no" class="tel" autocomplete="off" size="51"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  </td>
+ </tr>
+</table>
+
+<table id="table_add_new_customer" border="0" cellspacing="0" cellpadding="1" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;padding-top:10px;padding-left:15px;padding-bottom:15px;">
+
+    <tr align="center">
+      <td><b>Right Vision</b></td>
+      <td>Sph</td>
+      <td>Cyl</td>
+      <td>Axis</td>
+      <td>Vision</td>
+    </tr>
+
+    <tr>
+      <td>Distance</td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_d_sph" id="right_d_sph"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_d_cyl" id="right_d_cyl"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_d_axis" id="right_d_axis"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_d_vision" id="right_d_vision"/></td>
+    </tr>
+
+    <tr>
+      <td>Reading</td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_r_sph" id="right_r_sph"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_r_cyl" id="right_r_cyl"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_r_axis" id="right_r_axis"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="right_r_vision" id="right_r_vision"/></td>
+    </tr>
+</table>
+
+<table id="table_add_new_customer" border="0" cellspacing="0" cellpadding="1" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;padding-top:10px;padding-left:15px;padding-bottom:15px;">
+    <tr align="center">
+      <td><b>Left Vision</b></td>
+      <td>Sph</td>
+      <td>Cyl</td>
+      <td>Axis</td>
+      <td>Vision</td>
+    </tr>
+
+    <tr>
+      <td>Distance</td>
+       <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_d_sph" id="left_d_sph"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_d_cyl" id="left_d_cyl"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_d_axis" id="left_d_axis"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_d_vision" id="left_d_vision"/></td>
+    </tr>
+  &nbsp;
+  &nbsp;
+    <tr>
+      <td>Reading</td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_r_sph" id="left_r_sph"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_r_cyl" id="left_r_cyl"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_r_axis" id="left_r_axis"/></td>
+      <td><input class="input" type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="left_r_vision" id="left_r_vision"/></td>
+    </tr>
+</table>
+
+&nbsp;
+  &nbsp;
+
+<table id="table_add_new_customer" border="0" cellspacing="0" cellpadding="1" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;padding-top:10px;padding-left:15px;padding-bottom:15px;">
+              <tr align="center">
+                <td><b>Decenter</b></td>
+                <td></td>
+                
+                
+                
+               
+              
+              </tr>
+              <tr>
+                <td>In</td>
+                <td>Out</td>
+                
+               
+                
+                
+              
+              </tr>
+
+              <tr>
+                <td><input type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="decenter_in" id="decenter_in" autocomplete="on"/></td>
+
+                <td><input type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="decenter_out" id="decenter_out" autocomplete="on"/></td>
+              </tr>
+          </table>
+
+          <table border="0" cellspacing="0" cellpadding="1" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;padding-top:10px;padding-left:15px;padding-bottom:15px;">
+            
+            <tr>
+              <td><b>Segment Height</b></td>
+                <td></td>
+            </tr>
+
+            <tr>
+               <td>RV</td>
+                <td>LV</td>
+            </tr>
+
+            <tr>
+              <td><input type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="seg_height_rv" id="seg_height_rv" autocomplete="on"/></td>
+
+                <td><input type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="seg_height_lv" id="seg_height_lv" autocomplete="on"/></td>
+            </tr>
+
+          </table>
+
+          <table border="0" cellspacing="0" cellpadding="1" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;padding-top:10px;padding-left:15px;padding-bottom:15px;">
+            <tr>
+               <td><b>Base</b></td>
+                <td></td>
+            </tr>
+
+            <tr>
+              <td>RV</td>
+                <td>LV</td>
+            </tr>
+
+            <tr>
+              <td><input type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="base_rv" id="base_rv" autocomplete="on"/></td>
+
+              <td><input type="text" size="3" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" name="base_lv" id="base_lv" autocomplete="on"/></td>
+            </tr>
+
+    </table>
+
+<table border="0" cellspacing="0" cellpadding="1" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;padding-top:10px;padding-left:15px;padding-bottom:15px;">
+    <td>Lense:</td>
+    <td>
+  <input class="input" type="text" size="51" name="lense" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();" id="lense" autocomplete="on" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  </td>
+ </tr>
+
+   <tr>
+    <td>Frame:</td>
+    <td><input class="input" type="text" size="51" name="frame" id="frame" onblur="this.value=this.value.toUpperCase();" onkeyup="this.value=this.value.toUpperCase();"/></td>
+  </tr>
+
+  <tr height="30">
+    <td>Remarks:</td>
+    <td>
+  <input class="input" type="text" size="51" name="remarks" id="remarks" autocomplete="on" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  </td>
+ </tr>
+
+ </table><br/>
+ <table border="0" cellspacing="0" cellpadding="4" align="center">
+      <tr>
+    <td align="right">
+      <input type="button" class="back-button" value="Back" width="93" height="25" onclick="window.location.href='index.php'"/>
+            &nbsp;
+            <input type="submit" name="submit_add_cus" class="submit-btn" width="93" height="25" value="Save"/>
+    </td>
+      </tr>
+    </table>
+</form>
+</div>
+</div>
+
+</body>
+<script>
+  footnoteLoad();
+</script>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>customer-form</title>
+<script type="text/javascript" src="sales.js"></script>
+</head>
+
+<style type="text/css">
+    .customer-details-button {
+        margin-top: 17px;
+        margin-right: 17px;
+        margin-bottom: 17px;
+        margin-left: 17px;
+        text-align: left;
+    }
+    .customer-details-form {
+        max-width: 419px;
+    }
+    .customer-details-search {
+        margin-left: 68px;
+        text-indent: 0px;
+        color: #000000;
+    }
+    .customer-details-line {
+        float: right;
+        margin-top: -169px;
+        margin-right: 900px;
+        text-align: left;
+    }
+    .customer-details-form2{
+        max-width: 580px;
+        text-align: left;
+        margin-left: 529px;
+        margin-top: -149px;
+    }
+    .customer-details {
+        margin-bottom: 16px;
+        margin-top: 5px;
+        margin-left: 3px;
+    }
+    .result2 p{
+        cursor: pointer;
+    }
+    input:not([type=button]):not([type=image]){
+        text-align:center;
+        line-height: 20px;
+        font-size: 17px;
+        border-radius: 5px;
+        border: 2px solid;
+    }
+
+    th{
+      padding: 8px;
+      border-bottom: 1px solid #003366;
+    }
+    td{
+        padding: 8px;
+    }
+    tr:nth-child(even) {background-color: #a5d0ff;}
+
+    .price-td{
+        border-right: 2px solid black;
+    }
+
+    .clear-details{
+        text-align:center;
+        line-height: 20px;
+        font-size: 17px;
+
+        border-radius: 5px;
+        background-color:   #FFFF00;
+    }
+    .delete-row{
+        text-align:center;
+        line-height: 20px;
+        font-size: 17px;
+
+        border-radius: 5px;
+        color: white;
+        background-color: red;
+    }
+</style>
+
+<body style="background-color: #c6e2ff;">
+	<h3>Sales Product Data</h3>
+	<div class="sales-table" style="display: table;margin: 0 auto; margin-left: auto;margin-right: auto;background-color: #c6e2ff;">
+    <table width="100" id="sales-table" style="border-collapse: collapse;width:100%;">
+    <tbody>
+      <tr id="tr_head">
+        <th>Product ID</th>
+        <th>Quantity</th>
+        <th>Discount (%)</th>
+        <th>Type</th>
+        <th>Colour</th>
+        <th>Price (RM)</th>
+        <th style="width:150px;">Actions</th>
+      </tr>
+
+      <tr id="row_1">
+        
+        <td><input type="text" id="prod_id_1" class="product-id" size="23"></td>
+        <td><input type="text" id="prod_qty_1" class="prod_qty" size="4"></td>
+        <td><input type="text" id="prod_disct_1" class="prod_disct"></td>
+        <td><input type="text" id="prod_type_1" disabled="disabled"></td>
+        <td><input type="text" id="prod_colour_1" disabled="disabled"></td>
+        <td class="price-td"><input type="text" id="prod_price_1" disabled="disabled" class="prod_price"></td>
+        <td>
+            <input style="text-align:left;" type="button"  id="clear-1"class="clear-details" value="Clear">
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <!-- This div is for backend-search dropdown -->
+   <div id="result2" class="result2" style="display:none;position:absolute;background-color:#f9f9f9;min-width:50px;box-shadow:0px 8px 10px 0px rgba(0,0,0,0.2)"></div>
+
+  <div style="border-bottom: 5px solid #003366;">  <!-- The dark blue line under the sales table --> </div>
+
+<table  width="300" style="margin-left: 63.5%;margin-top: 2%;position: relative;">
+  <tr>
+    <th colspan="5" style="border: none;border: 0;text-align: center;">Total (RM):</th>
+    <th style="border: none;border: 0;"><input style="background-color: #FFEBCD;color:black;line-height: 28px;" type="text" name="total-price" id="total-price" disabled="disabled"></th>
+  </tr>
+
+  <input style="display: inline-block;
+      padding: 10px 20px;font-size: 20px;cursor: pointer;text-align: center;text-decoration: none;outline: none;color:white;background-color:#800080;border: none;border-radius: 15px;box-shadow: 0 5px #999;margin-top: 2%;right: 655px;position: absolute;" type="button" id="add-row-button" value="+"></input>
+
+</table>
+
+    
+   
+
+    <div id="test-div"></div>
+
+    <div style="margin-top: 5%;">
+        <input type="button" id="prev-button" class="back-btn" onclick="location.href='../'" value="Back"></input>
+        <input type="button" id="print-receipt-button" class="submit-btn" onclick="submit()" value="Done"></input>
+    </div>
+
+</div>
+</body>
+</html>
